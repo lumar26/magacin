@@ -52,7 +52,8 @@ public class Artikal {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Artikal artikal)) return false;
+        if (!(o instanceof Artikal)) return false;
+        Artikal artikal = (Artikal) o;
         return getSifra() == artikal.getSifra() && getNaziv().equals(artikal.getNaziv());
     }
 

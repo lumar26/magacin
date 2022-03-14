@@ -12,11 +12,12 @@ public class Magacin implements IMagacin {
 
     @Override
     public void add(Artikal artikal) {
-        if (!artikli.containsKey(artikal.getSifra()))
-            artikli.put(artikal.getSifra(), artikal);
-        else {
+
+        if (artikli.containsKey(artikal.getSifra())) {
             Artikal temp = artikli.get(artikal.getSifra());
             temp.setKolicina(temp.getKolicina() + artikal.getKolicina());
+        } else {
+            artikli.put(artikal.getSifra(), artikal);
         }
     }
 
