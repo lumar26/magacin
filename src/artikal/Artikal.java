@@ -1,4 +1,4 @@
-package magacin;
+package artikal;
 
 import java.util.Objects;
 
@@ -13,7 +13,9 @@ public class Artikal {
     }
 
     public void setNaziv(String naziv) {
-        this.naziv = naziv;
+        if (naziv != null && !naziv.isEmpty())
+            this.naziv = naziv;
+        else System.err.println("Naziv proizvoda ne sme biti null");
     }
 
     public int getSifra() {
@@ -21,7 +23,9 @@ public class Artikal {
     }
 
     public void setSifra(int sifra) {
-        this.sifra = sifra;
+        if (sifra > 0)
+            this.sifra = sifra;
+        else System.err.println("Sifra mora biti pozitivan ceo broj");
     }
 
     public String getOpis() {
@@ -29,7 +33,10 @@ public class Artikal {
     }
 
     public void setOpis(String opis) {
-        this.opis = opis;
+        if (opis != null && !opis.isEmpty())
+            this.opis = opis;
+        else System.err.println("Opis proizvoda ne sme biti null");
+
     }
 
     public int getKolicina() {
@@ -37,7 +44,9 @@ public class Artikal {
     }
 
     public void setKolicina(int kolicina) {
-        this.kolicina = kolicina;
+        if (kolicina > 0)
+            this.kolicina = kolicina;
+        else System.err.println("Kolicina mora biti pozitivan ceo broj");
     }
 
     @Override

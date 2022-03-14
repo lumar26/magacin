@@ -1,6 +1,6 @@
-package magacin.concrete;
+package artikal.concrete;
 
-import magacin.Artikal;
+import artikal.Artikal;
 
 public class KancelarijskiMaterijal extends Artikal {
     @Override

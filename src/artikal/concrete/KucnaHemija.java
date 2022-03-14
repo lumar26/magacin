@@ -1,9 +1,8 @@
-package magacin.concrete;
+package artikal.concrete;
 
-import magacin.Artikal;
+import artikal.Artikal;
 
 import java.time.LocalDate;
-import java.util.Objects;
 
 public class KucnaHemija extends Artikal {
     private LocalDate rokTrajanja;
@@ -13,7 +12,10 @@ public class KucnaHemija extends Artikal {
     }
 
     public void setRokTrajanja(LocalDate rokTrajanja) {
-        this.rokTrajanja = rokTrajanja;
+        if (rokTrajanja.isAfter(LocalDate.now()))
+            this.rokTrajanja = rokTrajanja;
+        else
+            System.err.println("Rok trajanja mora biti u buducnosti");
     }
 
     @Override
