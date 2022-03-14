@@ -1,6 +1,6 @@
 package interfejs;
 
-import magacin.Artikal;
+import artikal.Artikal;
 
 public interface IMagacin {
     void add(Artikal artikal);
