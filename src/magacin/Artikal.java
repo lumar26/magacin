@@ -1,10 +1,12 @@
 package magacin;
 
+import java.util.Objects;
+
 public class Artikal {
-    private String naziv;
-    private int sifra;
-    private String opis;
-    private int kolicina;
+    protected String naziv;
+    protected int sifra;
+    protected String opis;
+    protected int kolicina;
 
     public String getNaziv() {
         return naziv;
@@ -36,5 +38,17 @@ public class Artikal {
 
     public void setKolicina(int kolicina) {
         this.kolicina = kolicina;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Artikal artikal)) return false;
+        return getSifra() == artikal.getSifra() && getNaziv().equals(artikal.getNaziv());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getNaziv(), getSifra());
     }
 }
